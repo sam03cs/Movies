@@ -17,6 +17,7 @@ function App() {
         >
           Learn React
         </a>
+        <a href="SignIn">sign in</a>
       </header>
     </div>
   );
