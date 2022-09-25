@@ -15,7 +15,7 @@ const Navbar = () => {
             Sign Up
           </NavLink>
           <NavLink to="/SignIn" activeStyle>
-            Sign In
+            Login
           </NavLink>
           <NavLink to="/Checkout" activeStyle>
             Checkout

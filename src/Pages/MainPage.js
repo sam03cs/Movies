@@ -15,6 +15,8 @@ import Typography from '@mui/material/Typography';
 import Container from '@mui/material/Container';
 import Link from '@mui/material/Link';
 import { createTheme, ThemeProvider } from '@mui/material/styles';
+import "./MainPage.css";
+//import { NavLink } from 'react-router-dom';
 
 function Copyright() {
   return (
@@ -37,13 +39,16 @@ export default function Album() {
   return (
     <ThemeProvider theme={theme}>
       <CssBaseline />
-      <AppBar position="relative">
+      <AppBar position="relative" color="primary">
         <Toolbar>
           <CameraIcon sx={{ mr: 2 }} />
           <Typography variant="h6" color="inherit" noWrap>
             Website Name
           </Typography>
         </Toolbar>
+        <a href="SignIn" class="login">
+              Login
+        </a>
       </AppBar>
       <main>
         {/* Hero unit */}
