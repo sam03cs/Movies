@@ -13,12 +13,5 @@
     position: absolute;
 }
 .login:hover {
-    color: purple;
-}
-
-.search {
-    position: absolute;
-    margin-left: 60%;
-    text-align: center;
-    display: flex;
+    color: blue;
 }
