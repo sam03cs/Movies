@@ -42,17 +42,17 @@ export default function Album() {
   return (
     <ThemeProvider theme={theme}>
       <CssBaseline />
-      <AppBar position="relative" color="primary">
+      <AppBar position="relative" class="bar">
         <Toolbar>
           <CameraIcon sx={{ mr: 2 }} />
           <Typography variant="h6" color="inherit" noWrap>
             Website Name
           </Typography>
           <a href class="search"> <SearchBar /> </a>
-        </Toolbar>
-        <a href="SignIn" class="login">
+          <a href="SignIn" class="login">
               Login
-        </a>
+          </a>
+        </Toolbar>
       </AppBar>
       <main>
         {/* Hero unit */}
