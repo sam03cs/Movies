@@ -102,7 +102,7 @@ export default function SignUp() {
               </Grid>
               <Grid item xs={12}>
                 <FormControlLabel
-                  control={<Checkbox value="allowExtraEmails" color="primary" />}
+                  control={<Checkbox value="allowExtraEmails" style= {{ color: 'red'}} />}
                   label="I want to receive inspiration, marketing promotions and updates via email."
                 />
               </Grid>
@@ -111,13 +111,14 @@ export default function SignUp() {
               type="submit"
               fullWidth
               variant="contained"
+              style= {{ backgroundColor: 'red'}}
               sx={{ mt: 3, mb: 2 }}
             >
               Sign Up
             </Button>
             <Grid container justifyContent="flex-end">
               <Grid item>
-                <Link href="#" variant="body2">
+                <Link href="#" variant="body2" style= {{ color: 'red'}}>
                   Already have an account? Sign in
                 </Link>
               </Grid>

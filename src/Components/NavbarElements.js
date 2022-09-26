@@ -13,7 +13,7 @@ export const Nav = styled.nav`
 `;
   
 export const NavLink = styled(Link)`
-  color: #808080;
+  color: #000000;
   display: flex;
   align-items: center;
   text-decoration: none;
@@ -21,13 +21,13 @@ export const NavLink = styled(Link)`
   height: 100%;
   cursor: pointer;
   &.active {
-    color: #4d4dff;
+    color: #ffffff;
   }
 `;
   
 export const Bars = styled(FaBars)`
   display: none;
-  color: #808080;
+  color: #000000;
   @media screen and (max-width: 768px) {
     display: block;
     position: absolute;

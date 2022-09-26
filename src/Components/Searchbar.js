@@ -19,7 +19,7 @@ export default function SearchBar() {
       <InputBase
         sx={{ ml: 1, flex: 1 }}
         placeholder="Search Movies"
-        inputProps={{ 'aria-label': 'search google maps' }}
+        inputProps={{ 'aria-label': 'search movies' }}
       />
       <IconButton type="button" sx={{ p: '10px' }} aria-label="search">
         <SearchIcon />

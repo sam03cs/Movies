@@ -13,12 +13,13 @@
     position: absolute;
 }
 .login:hover {
-    color: purple;
+    color: red;
 }
 
 .search {
     position: absolute;
-    margin-left: 60%;
+    margin-left: 85%;
     text-align: center;
     display: flex;
+    color: white;
 }

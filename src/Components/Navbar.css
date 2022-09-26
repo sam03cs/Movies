@@ -8,7 +8,7 @@ background: #f10a0a;
 }
 
 .NavLink{
-color: #808080;
+color: #000000;
   display: flex;
   align-items: center;
   text-decoration: none;
@@ -17,7 +17,7 @@ color: #808080;
   cursor: pointer;
 }
 .NavLink.active {
-    color: #4d4dff;
+    color: #ffffff;
 }
 
 .Bars {

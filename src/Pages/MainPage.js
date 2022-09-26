@@ -17,8 +17,9 @@ import Link from '@mui/material/Link';
 import { createTheme, ThemeProvider } from '@mui/material/styles';
 import "./MainPage.css";
 //import Navbar from '../Components/Navbar';
-import SearchBar from '../Components/Searchbar';
+//import SearchBar from '../Components/Searchbar';
 import MainModal from '../Components/Modal';
+import SearchModal from '../Components/Search';
 //import { NavLink } from 'react-router-dom';
 
 function Copyright() {
@@ -48,7 +49,7 @@ export default function Album() {
           <Typography variant="h6" color="inherit" noWrap>
             Website Name
           </Typography>
-          <a href class="search"> <SearchBar /> </a>
+          <a href class="search"> <SearchModal /> </a>
           <a href="SignIn" class="login">
               Login
           </a>
