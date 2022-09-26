@@ -1,5 +1,6 @@
 .MuiAppBar-colorPrimary {
-    color: pink;
+    color: red;
+    background-color: black;
 }
 
 .login {
@@ -12,5 +13,12 @@
     position: absolute;
 }
 .login:hover {
-    color: blue;
+    color: purple;
+}
+
+.search {
+    position: absolute;
+    margin-left: 60%;
+    text-align: center;
+    display: flex;
 }

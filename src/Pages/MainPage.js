@@ -16,6 +16,9 @@ import Container from '@mui/material/Container';
 import Link from '@mui/material/Link';
 import { createTheme, ThemeProvider } from '@mui/material/styles';
 import "./MainPage.css";
+//import Navbar from '../Components/Navbar';
+import SearchBar from '../Components/Searchbar';
+import MainModal from '../Components/Modal';
 //import { NavLink } from 'react-router-dom';
 
 function Copyright() {
@@ -45,6 +48,7 @@ export default function Album() {
           <Typography variant="h6" color="inherit" noWrap>
             Website Name
           </Typography>
+          <a href class="search"> <SearchBar /> </a>
         </Toolbar>
         <a href="SignIn" class="login">
               Login
@@ -111,8 +115,8 @@ export default function Album() {
                     </Typography>
                   </CardContent>
                   <CardActions>
-                    <Button size="small">View</Button>
-                    <Button size="small">Edit</Button>
+                    <MainModal />
+                    <Button size="medium">Edit</Button>
                   </CardActions>
                 </Card>
               </Grid>
