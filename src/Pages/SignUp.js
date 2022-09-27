@@ -67,6 +67,7 @@ export default function SignUp() {
                   id="firstName"
                   label="First Name"
                   autoFocus
+                  inputProps= {{ style: { color:'red' }}}
                 />
               </Grid>
               <Grid item xs={12} sm={6}>
@@ -118,7 +119,7 @@ export default function SignUp() {
             </Button>
             <Grid container justifyContent="flex-end">
               <Grid item>
-                <Link href="#" variant="body2" style= {{ color: 'red'}}>
+                <Link href="/SignIn" variant="body2" style= {{ color: 'red'}}>
                   Already have an account? Sign in
                 </Link>
               </Grid>

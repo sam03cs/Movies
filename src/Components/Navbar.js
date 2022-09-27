@@ -20,6 +20,9 @@ const Navbar = () => {
           <NavLink to="/Checkout" activeStyle>
             Checkout
           </NavLink>
+          <NavLink to="/BookTickets" activeStyle>
+            Book
+          </NavLink>
         </NavMenu>
       </Nav>
     </>

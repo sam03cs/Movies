@@ -8,7 +8,7 @@ import SearchBar from './Searchbar';
 //import IconButton from '@mui/material/IconButton';
 
 const style = {
-  position: 'relative',
+  position: 'absolute',
   top: '117px',
   left: '68%',
   transform: 'translate(-50%, -50%)',
