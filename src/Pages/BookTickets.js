@@ -1,20 +1,21 @@
 import './BookTickets.css'
 import React, { useState } from 'react'
 import clsx from 'clsx'
+import Button from '@mui/material/Button';
 
 const movies = [
   {
-    name: 'Avenger',
+    name: 'The Lego Movie M 7:30pm',
     price: 10,
     occupied: [20, 21, 30, 1, 2, 8],
   },
   {
-    name: 'Joker',
-    price: 12,
+    name: 'The Lego Movie M 10:00pm',
+    price: 10,
     occupied: [9, 41, 35, 11, 65, 26],
   },
   {
-    name: 'Toy story',
+    name: 'The Lego Movie M 10:00am',
     price: 8,
     occupied: [37, 25, 44, 13, 2, 3],
   },
@@ -53,6 +54,7 @@ export default function Book() {
         <span className="total">
           {selectedSeats.length * selectedMovie.price}$
         </span>
+        <Button variant="contained" style= {{ backgroundColor: 'red'}}>Book Tickets</Button>
       </p>
     </div>
   )

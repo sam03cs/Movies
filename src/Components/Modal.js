@@ -5,6 +5,7 @@ import Typography from '@mui/material/Typography';
 import Modal from '@mui/material/Modal';
 import YoutubeEmbed from "./YoutubeEmbed";
 import {useNavigate} from 'react-router-dom'
+import "./Modal.css";
 
 const style = {
   position: 'absolute',
@@ -40,7 +41,14 @@ export default function MainModal() {
           <Typography id="modal-modal-title" variant="h6" component="h2">
             The Lego Movie
           </Typography>
-          <Button onClick={navigateToBooking} variant="contained">Book Tickets</Button>
+          <div sx='h1' style= {{ color: 'red'}}>
+            Showtimes
+          </div>
+          <Typography class="showtime">
+            Monday: 7:30pm  10:00pm
+          </Typography>
+          <Button onClick={navigateToBooking} variant="contained" style= {{ backgroundColor: 'red'}}>Book Tickets</Button>
+          <div><br></br></div>
           <YoutubeEmbed embedId="fZ_JOBCLF-I" />
           <Typography id="modal-modal-description" sx={{ mt: 2 }}>
             Emmet (Chris Pratt), an ordinary LEGO figurine who always follows the rules, is mistakenly identified as the Special -- an extraordinary being and the key to saving the world. He finds himself drafted into a fellowship of strangers who are on a mission to stop an evil tyrant's (Will Ferrell) plans to conquer the world. Unfortunately for Emmet, he is hopelessly -- and hilariously -- unprepared for such a task, but he'll give it his all nonetheless.
