@@ -22,9 +22,6 @@ const Navbar = () => {
           <NavLink to="/RegistrationConfirm" activeStyle>
             Registration Confirmation
           </NavLink>
-          <NavLink to="/EditProfile" activeStyle>
-            Edit Profile
-          </NavLink>
           <NavLink to="/BookTickets" activeStyle>
             Book
           </NavLink>

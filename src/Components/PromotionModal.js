@@ -4,10 +4,10 @@ import Button from '@mui/material/Button';
 import Typography from '@mui/material/Typography';
 import Modal from '@mui/material/Modal';
 //import YoutubeEmbed from "./YoutubeEmbed";
-import {useNavigate} from 'react-router-dom'
+//import {useNavigate} from 'react-router-dom'
 import "./Modal.css";
 import TextField from '@mui/material/TextField';
-import AddIcon from '@mui/icons-material/Add';
+//import AddIcon from '@mui/icons-material/Add';
 
 const style = {
   position: 'absolute',
@@ -25,10 +25,10 @@ export default function AdminModal() {
   const [open, setOpen] = React.useState(false);
   const handleOpen = () => setOpen(true);
   const handleClose = () => setOpen(false);
-  const navigate = useNavigate();
+  /*const navigate = useNavigate();
   const navigateToBooking = () => {
     navigate('/BookTickets');
-  }
+  }*/
 
   return (
     <div>

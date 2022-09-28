@@ -8,7 +8,6 @@ import SignIn from './Pages/SignIn';
 import Checkout from './Pages/Checkout';
 import SignUp from './Pages/SignUp';
 import Book from './Pages/BookTickets';
-import EditProfile from './Pages/EditProfile';
 import RegistrationConfirm from './Pages/RegistrationConfirm';
 import AdminView from './Pages/AdminView';
   
@@ -24,7 +23,6 @@ return (
         <Route path='/Checkout' element={<Checkout/>} />
         <Route path='/RegistrationConfirm' element={<RegistrationConfirm/>} />
         <Route path='/BookTickets' element={<Book/>} />
-        <Route path='/EditProfile' element={<EditProfile/>} />
         <Route path='/AdminView' element={<AdminView/>} />
     </Routes>
     </Router>

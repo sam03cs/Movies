@@ -4,7 +4,7 @@ import Button from '@mui/material/Button';
 import Typography from '@mui/material/Typography';
 import Modal from '@mui/material/Modal';
 import YoutubeEmbed from "./YoutubeEmbed";
-import {useNavigate} from 'react-router-dom'
+//import {useNavigate} from 'react-router-dom'
 
 const style = {
   position: 'absolute',
@@ -22,11 +22,11 @@ export default function AdminModal() {
   const [open, setOpen] = React.useState(false);
   const handleOpen = () => setOpen(true);
   const handleClose = () => setOpen(false);
-  const navigate = useNavigate();
+  /*const navigate = useNavigate();
   const navigateToBooking = () => {
     navigate('/BookTickets');
   }
-
+*/
   return (
     <div>
       <Button onClick={handleOpen} style= {{ color: 'red'}}>Edit</Button>
