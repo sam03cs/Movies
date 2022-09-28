@@ -1,6 +1,6 @@
 import * as React from 'react';
 import AppBar from '@mui/material/AppBar';
-import Button from '@mui/material/Button';
+//import Button from '@mui/material/Button';
 //import CameraIcon from '@mui/icons-material/PhotoCamera';
 import Card from '@mui/material/Card';
 import CardActions from '@mui/material/CardActions';
@@ -15,10 +15,11 @@ import Typography from '@mui/material/Typography';
 import Container from '@mui/material/Container';
 import Link from '@mui/material/Link';
 import { createTheme, ThemeProvider } from '@mui/material/styles';
-import "./MainPage.css";
+import "./AdminView.css";
 //import Navbar from '../Components/Navbar';
 //import SearchBar from '../Components/Searchbar';
-import MainModal from '../Components/Modal';
+import AdminModal from '../Components/AdminModal';
+import PromotionModal from '../Components/PromotionModal';
 import SearchModal from '../Components/Search';
 import PetsIcon from '@mui/icons-material/Pets';
 //import { NavLink } from 'react-router-dom';
@@ -44,7 +45,7 @@ const cards = [
 
 const theme = createTheme();
 
-export default function Album() {
+export default function Admin() {
   return (
     <ThemeProvider theme={theme}>
       <CssBaseline />
@@ -90,8 +91,7 @@ export default function Album() {
               spacing={2}
               justifyContent="center"
             >
-              <Button variant="contained" style= {{ backgroundColor: 'red'}}>Main call to action</Button>
-              <Button variant="outlined" style= {{ outlineColor: 'red', color: 'red'}}>Secondary action</Button>
+            <PromotionModal />
             </Stack>
           </Container>
         </Box>
@@ -118,7 +118,7 @@ export default function Album() {
                     </Typography>
                   </CardContent>
                   <CardActions>
-                    <MainModal />
+                    <AdminModal />
                   </CardActions>
                 </Card>
               </Grid>

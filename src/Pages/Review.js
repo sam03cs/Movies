@@ -4,29 +4,33 @@ import List from '@mui/material/List';
 import ListItem from '@mui/material/ListItem';
 import ListItemText from '@mui/material/ListItemText';
 import Grid from '@mui/material/Grid';
+import DeleteIcon from '@mui/icons-material/Delete';
+import AddIcon from '@mui/icons-material/Add';
+import Button from '@mui/material/Button';
+import TextField from '@mui/material/TextField';
 
 const products = [
   {
-    name: 'Product 1',
-    desc: 'A nice thing',
-    price: '$9.99',
+    name: 'The Lego Movie',
+    desc: '0-8yrs',
+    price: '$8.00',
   },
   {
-    name: 'Product 2',
-    desc: 'Another thing',
-    price: '$3.45',
+    name: 'The Lego Movie',
+    desc: '9-17yrs',
+    price: '$9.00',
   },
   {
-    name: 'Product 3',
-    desc: 'Something else',
-    price: '$6.51',
+    name: 'The Lego Movie',
+    desc: '18-64yrs',
+    price: '$10.00',
   },
   {
-    name: 'Product 4',
-    desc: 'Best thing of all',
-    price: '$14.11',
+    name: 'The Lego Movie',
+    desc: '+65yrs',
+    price: '$6.00',
   },
-  { name: 'Shipping', desc: '', price: 'Free' },
+  //{ name: 'Shipping', desc: '', price: 'Free' },
 ];
 
 const addresses = ['1 MUI Drive', 'Reactville', 'Anytown', '99999', 'USA'];
@@ -48,13 +52,26 @@ export default function Review() {
           <ListItem key={product.name} sx={{ py: 1, px: 0 }}>
             <ListItemText primary={product.name} secondary={product.desc} />
             <Typography variant="body2">{product.price}</Typography>
+            <Button style= {{ color: 'red'}}><AddIcon /></Button>
+            <Button style= {{ color: 'red'}}><DeleteIcon /></Button>
           </ListItem>
         ))}
+        <TextField
+            id="cardName"
+            label="Promo Code"
+            width="50%"
+          />
+        <ListItem sx={{ py: 1, px: 0 }}>
+          <ListItemText primary="Shipping" />
+          <Typography variant="subtitle1" sx={{ fontWeight: 400 }}>
+            Free
+          </Typography>
+        </ListItem>
 
         <ListItem sx={{ py: 1, px: 0 }}>
           <ListItemText primary="Total" />
           <Typography variant="subtitle1" sx={{ fontWeight: 700 }}>
-            $34.06
+            $33.00
           </Typography>
         </ListItem>
       </List>

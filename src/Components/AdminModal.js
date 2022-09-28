@@ -18,7 +18,7 @@ const style = {
   p: 4,
 };
 
-export default function MainModal() {
+export default function AdminModal() {
   const [open, setOpen] = React.useState(false);
   const handleOpen = () => setOpen(true);
   const handleClose = () => setOpen(false);
@@ -29,7 +29,7 @@ export default function MainModal() {
 
   return (
     <div>
-      <Button onClick={handleOpen} style= {{ color: 'red'}}>View</Button>
+      <Button onClick={handleOpen} style= {{ color: 'red'}}>Edit</Button>
       <Modal
         open={open}
         onClose={handleClose}
@@ -46,7 +46,7 @@ export default function MainModal() {
           <Typography class="showtime">
             11:00am 6:00pm 10:30pm
           </Typography>
-          <Button onClick={navigateToBooking} variant="contained" style= {{ backgroundColor: 'red'}}>Book Tickets</Button>
+          <Button /*onClick={navigateToBooking}*/ variant="contained" style= {{ backgroundColor: 'red'}}>Edit</Button>
           <div><br></br></div>
           <YoutubeEmbed embedId="fZ_JOBCLF-I" />
           <Typography id="modal-modal-description" sx={{ mt: 2 }}>
