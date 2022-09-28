@@ -8,6 +8,8 @@ import SignIn from './Pages/SignIn';
 import Checkout from './Pages/Checkout';
 import SignUp from './Pages/SignUp';
 import Book from './Pages/BookTickets';
+import PersonalProfile from './Pages/Profile';
+import Edit from './Pages/EditPage';
   
 function App() {
 return (
@@ -20,6 +22,8 @@ return (
         <Route path='/SignIn' element={<SignIn/>} />
         <Route path='/Checkout' element={<Checkout/>} />
         <Route path='/BookTickets' element={<Book/>} />
+        <Route path='/Profile' element={<PersonalProfile/>} />
+        <Route path='/EditPage' element={<Edit/>} />
     </Routes>
     </Router>
 );
