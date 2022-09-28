@@ -1,6 +1,6 @@
 import * as React from 'react';
 import AppBar from '@mui/material/AppBar';
-import Button from '@mui/material/Button';
+//import Button from '@mui/material/Button';
 //import CameraIcon from '@mui/icons-material/PhotoCamera';
 import Card from '@mui/material/Card';
 import CardActions from '@mui/material/CardActions';
@@ -80,9 +80,7 @@ export default function Album() {
               Watchdawgs
             </Typography>
             <Typography variant="h5" align="center" color="text.secondary" paragraph>
-              Something short and leading about the collection below—its contents,
-              the creator, etc. Make it short and sweet, but not too short so folks
-              don&apos;t simply skip over it entirely.
+              Book your tickets today!
             </Typography>
             <Stack
               sx={{ pt: 4 }}
@@ -90,8 +88,6 @@ export default function Album() {
               spacing={2}
               justifyContent="center"
             >
-              <Button variant="contained" style= {{ backgroundColor: 'red'}}>Main call to action</Button>
-              <Button variant="outlined" style= {{ outlineColor: 'red', color: 'red'}}>Secondary action</Button>
             </Stack>
           </Container>
         </Box>
