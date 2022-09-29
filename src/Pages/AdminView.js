@@ -15,10 +15,11 @@ import Typography from '@mui/material/Typography';
 import Container from '@mui/material/Container';
 import Link from '@mui/material/Link';
 import { createTheme, ThemeProvider } from '@mui/material/styles';
-import "./MainPage.css";
+import "./AdminView.css";
 //import Navbar from '../Components/Navbar';
 //import SearchBar from '../Components/Searchbar';
-import MainModal from '../Components/Modal';
+import AdminModal from '../Components/AdminModal';
+import PromotionModal from '../Components/PromotionModal';
 import SearchModal from '../Components/Search';
 import PetsIcon from '@mui/icons-material/Pets';
 //import { NavLink } from 'react-router-dom';
@@ -44,7 +45,7 @@ const cards = [
 
 const theme = createTheme();
 
-export default function Album() {
+export default function Admin() {
   return (
     <ThemeProvider theme={theme}>
       <CssBaseline />
@@ -80,7 +81,9 @@ export default function Album() {
               Watchdawgs
             </Typography>
             <Typography variant="h5" align="center" color="text.secondary" paragraph>
-              Book your tickets today!
+              Something short and leading about the collection below—its contents,
+              the creator, etc. Make it short and sweet, but not too short so folks
+              don&apos;t simply skip over it entirely.
             </Typography>
             <Stack
               sx={{ pt: 4 }}
@@ -88,6 +91,7 @@ export default function Album() {
               spacing={2}
               justifyContent="center"
             >
+            <PromotionModal />
             </Stack>
           </Container>
         </Box>
@@ -114,7 +118,7 @@ export default function Album() {
                     </Typography>
                   </CardContent>
                   <CardActions>
-                    <MainModal />
+                    <AdminModal />
                   </CardActions>
                 </Card>
               </Grid>

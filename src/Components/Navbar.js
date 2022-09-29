@@ -1,7 +1,6 @@
 import React from "react";
 import { Nav, NavLink, NavMenu } 
     from "./NavbarElements";
-import "./Navbar.css";
   
 const Navbar = () => {
   return (
@@ -20,8 +19,14 @@ const Navbar = () => {
           <NavLink to="/Checkout" activeStyle>
             Checkout
           </NavLink>
+          <NavLink to="/RegistrationConfirm" activeStyle>
+            Registration Confirmation
+          </NavLink>
           <NavLink to="/BookTickets" activeStyle>
             Book
+          </NavLink>
+          <NavLink to="/AdminView" activeStyle>
+            Admin
           </NavLink>
         </NavMenu>
       </Nav>

@@ -1,22 +1,12 @@
-@import url('https://fonts.googleapis.com/css?family=Exo+2&display=swap');
+/*@import url('https://fonts.googleapis.com/css?family=Exo+2&display=swap');
 
 *,
 *::after,
 *::before {
   box-sizing: border-box;
 }
+*/
 
-body {
-  margin-top: 10%;
-  padding: 0;
-  font-family: 'Exo 2', sans-serif;
-  background: #222222;
-  color: white;
-  font-size: 14px;
-  min-height: 100vh;
-  /*display: grid;*/
-  place-items: center;
-}
 
 .Book {
   text-align: center;
@@ -29,8 +19,12 @@ body {
   margin-bottom: 24px;
 }
 
-.Date {
+.Time {
     margin-bottom: 30px;
+}
+
+.Age {
+    margin-bottom: 36px;
 }
 
 .Movies select {
@@ -41,6 +35,24 @@ body {
   border-radius: 4px;
   padding: 6px 24px;
 }
+
+.Time select {
+    appearance: none;
+    background: white;
+    font-size: 14px;
+    margin-left: 12px;
+    border-radius: 4px;
+    padding: 6px 24px;
+  }
+
+.Age select {
+    appearance: none;
+    background: white;
+    font-size: 14px;
+    margin-left: 12px;
+    border-radius: 4px;
+    padding: 6px 24px;
+  }
 
 .ShowCase {
   margin: 0 0 48px;
@@ -93,7 +105,7 @@ body {
 .Cinema .seats .seat:not(.occupied):hover,
 .Cinema .seats .seat:not(.occupied):focus {
   cursor: pointer;
-  background: #ff5e5e;
+  /*background: #ff5e5e;*/
   transform: scale(1.2);
 }
 
