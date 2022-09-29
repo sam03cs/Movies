@@ -104,7 +104,7 @@ export default function Checkout() {
                 {getStepContent(activeStep)}
                 <Box sx={{ display: 'flex', justifyContent: 'flex-end' }}>
                   {activeStep !== 0 && (
-                    <Button onClick={handleBack} sx={{ mt: 3, ml: 1 }}>
+                    <Button onClick={handleBack} style= {{ color: 'red'}} sx={{ mt: 3, ml: 1 }}>
                       Back
                     </Button>
                   )}
@@ -112,6 +112,7 @@ export default function Checkout() {
                   <Button
                     variant="contained"
                     onClick={handleNext}
+                    style= {{ backgroundColor: 'red'}}
                     sx={{ mt: 3, ml: 1 }}
                   >
                     {activeStep === steps.length - 1 ? 'Place order' : 'Next'}

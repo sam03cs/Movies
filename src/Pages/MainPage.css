@@ -1,16 +1,25 @@
-.MuiAppBar-colorPrimary {
-    color: pink;
+
+.bar {
+    color: red;
+    background-color: black;
 }
 
 .login {
     color: white;
     font-size: 20px;
     margin-left: 90%;
-    margin-top: 15px;
     text-decoration: none;
     display: flex;
     position: absolute;
 }
 .login:hover {
-    color: blue;
+    color: red;
+}
+
+.search {
+    position: absolute;
+    margin-left: 85%;
+    text-align: center;
+    display: flex;
+    color: white;
 }

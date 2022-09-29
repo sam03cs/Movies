@@ -1,7 +1,7 @@
 import * as React from 'react';
 import AppBar from '@mui/material/AppBar';
 import Button from '@mui/material/Button';
-import CameraIcon from '@mui/icons-material/PhotoCamera';
+//import CameraIcon from '@mui/icons-material/PhotoCamera';
 import Card from '@mui/material/Card';
 import CardActions from '@mui/material/CardActions';
 import CardContent from '@mui/material/CardContent';
@@ -16,6 +16,11 @@ import Container from '@mui/material/Container';
 import Link from '@mui/material/Link';
 import { createTheme, ThemeProvider } from '@mui/material/styles';
 import "./MainPage.css";
+//import Navbar from '../Components/Navbar';
+//import SearchBar from '../Components/Searchbar';
+import MainModal from '../Components/Modal';
+import SearchModal from '../Components/Search';
+import PetsIcon from '@mui/icons-material/Pets';
 //import { NavLink } from 'react-router-dom';
 
 function Copyright() {
@@ -31,7 +36,11 @@ function Copyright() {
   );
 }
 
-const cards = [1, 2, 3, 4, 5, 6, 7, 8, 9];
+const cards = [
+  { card: 1, name: 'The Lego Movie' },
+  { card: 2, name: 'The Lego Movie' },
+  { card: 3, name: 'The Lego Movie' }
+];
 
 const theme = createTheme();
 
@@ -39,16 +48,17 @@ export default function Album() {
   return (
     <ThemeProvider theme={theme}>
       <CssBaseline />
-      <AppBar position="relative" color="primary">
+      <AppBar position="relative" class="bar">
         <Toolbar>
-          <CameraIcon sx={{ mr: 2 }} />
+          <PetsIcon sx={{ mr: 2 }} />
           <Typography variant="h6" color="inherit" noWrap>
-            Website Name
+            Watchdawgs
           </Typography>
-        </Toolbar>
-        <a href="SignIn" class="login">
+          <a href class="search"> <SearchModal /> </a>
+          <a href="SignIn" class="login">
               Login
-        </a>
+          </a>
+        </Toolbar>
       </AppBar>
       <main>
         {/* Hero unit */}
@@ -67,12 +77,10 @@ export default function Album() {
               color="text.primary"
               gutterBottom
             >
-              Website Name
+              Watchdawgs 
             </Typography>
             <Typography variant="h5" align="center" color="text.secondary" paragraph>
-              Something short and leading about the collection below—its contents,
-              the creator, etc. Make it short and sweet, but not too short so folks
-              don&apos;t simply skip over it entirely.
+              The premier website for booking your next movie theater visit on UGA campus!
             </Typography>
             <Stack
               sx={{ pt: 4 }}
@@ -80,8 +88,8 @@ export default function Album() {
               spacing={2}
               justifyContent="center"
             >
-              <Button variant="contained">Main call to action</Button>
-              <Button variant="outlined">Secondary action</Button>
+              <Button variant="contained" style= {{ backgroundColor: 'red'}}>Main call to action</Button>
+              <Button variant="outlined" style= {{ outlineColor: 'red', color: 'red'}}>Secondary action</Button>
             </Stack>
           </Container>
         </Box>
@@ -89,7 +97,7 @@ export default function Album() {
           {/* End hero unit */}
           <Grid container spacing={4}>
             {cards.map((card) => (
-              <Grid item key={card} xs={12} sm={6} md={4}>
+              <Grid item key={cards.indexOf(card)} xs={12} sm={6} md={4}>
                 <Card
                   sx={{ height: '100%', display: 'flex', flexDirection: 'column' }}
                 >
@@ -99,20 +107,20 @@ export default function Album() {
                       // 16:9
                       pt: '56.25%',
                     }}
-                    image="https://source.unsplash.com/random"
+                    image="https://m.media-amazon.com/images/M/MV5BMTg4MDk1ODExN15BMl5BanBnXkFtZTgwNzIyNjg3MDE@._V1_.jpg"
                     alt="random"
                   />
-                  <CardContent sx={{ flexGrow: 1 }}>
+                  <CardContent sx={{ flexGrow: 1 }} title={`name : ${card.name}`}>
                     <Typography gutterBottom variant="h5" component="h2">
-                      Movie Name
+                    The Lego Movie
                     </Typography>
                     <Typography>
                       Movie Times
                     </Typography>
                   </CardContent>
                   <CardActions>
-                    <Button size="small">View</Button>
-                    <Button size="small">Edit</Button>
+                    <MainModal />
+                    <Button size="medium" style= {{ color: 'red'}}>Edit</Button>
                   </CardActions>
                 </Card>
               </Grid>

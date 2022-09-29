@@ -20,6 +20,15 @@ const Navbar = () => {
           <NavLink to="/Checkout" activeStyle>
             Checkout
           </NavLink>
+          <NavLink to="/BookTickets" activeStyle>
+            Book
+          </NavLink>
+          <NavLink to="/Profile" activeStyle>
+            Profile
+          </NavLink>
+          <NavLink to="/EditPage" activeStyle>
+            Edit profile
+          </NavLink>
         </NavMenu>
       </Nav>
     </>
