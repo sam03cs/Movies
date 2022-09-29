@@ -15,10 +15,11 @@ import Typography from '@mui/material/Typography';
 import Container from '@mui/material/Container';
 import Link from '@mui/material/Link';
 import { createTheme, ThemeProvider } from '@mui/material/styles';
-import "./MainPage.css";
+import "./AdminView.css";
 //import Navbar from '../Components/Navbar';
 //import SearchBar from '../Components/Searchbar';
-import MainModal from '../Components/Modal';
+import AdminModal from '../Components/AdminModal';
+import PromotionModal from '../Components/PromotionModal';
 import SearchModal from '../Components/Search';
 import PetsIcon from '@mui/icons-material/Pets';
 //import { NavLink } from 'react-router-dom';
@@ -37,14 +38,14 @@ function Copyright() {
 }
 
 const cards = [
-  { card: 1, name: 'The Lego Movie' },
-  { card: 2, name: 'The Lego Movie' },
-  { card: 3, name: 'The Lego Movie' }
+  { card: 1, name: 'blah' },
+  { card: 2, name: 'nope' },
+  { card: 3, name: 'haha' }
 ];
 
 const theme = createTheme();
 
-export default function Album() {
+export default function Admin() {
   return (
     <ThemeProvider theme={theme}>
       <CssBaseline />
@@ -77,10 +78,12 @@ export default function Album() {
               color="text.primary"
               gutterBottom
             >
-              Watchdawgs 
+              Watchdawgs
             </Typography>
             <Typography variant="h5" align="center" color="text.secondary" paragraph>
-              The premier website for booking your next movie theater visit on UGA campus!
+              Something short and leading about the collection below—its contents,
+              the creator, etc. Make it short and sweet, but not too short so folks
+              don&apos;t simply skip over it entirely.
             </Typography>
             <Stack
               sx={{ pt: 4 }}
@@ -88,6 +91,7 @@ export default function Album() {
               spacing={2}
               justifyContent="center"
             >
+            <PromotionModal />
             </Stack>
           </Container>
         </Box>
@@ -105,7 +109,7 @@ export default function Album() {
                       // 16:9
                       pt: '56.25%',
                     }}
-                    image="https://m.media-amazon.com/images/M/MV5BMTg4MDk1ODExN15BMl5BanBnXkFtZTgwNzIyNjg3MDE@._V1_.jpg"
+                    image="https://source.unsplash.com/random"
                     alt="random"
                   />
                   <CardContent sx={{ flexGrow: 1 }} title={`name : ${card.name}`}>
@@ -114,7 +118,7 @@ export default function Album() {
                     </Typography>
                   </CardContent>
                   <CardActions>
-                    <MainModal />
+                    <AdminModal />
                   </CardActions>
                 </Card>
               </Grid>
