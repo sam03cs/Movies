@@ -27,6 +27,12 @@ const Navbar = () => {
           </NavLink>
           <NavLink to="/AdminView" activeStyle>
             Admin
+            </NavLink>
+          <NavLink to="/Profile" activeStyle>
+            Profile
+          </NavLink>
+          <NavLink to="/EditPage" activeStyle>
+            Edit profile
           </NavLink>
         </NavMenu>
       </Nav>

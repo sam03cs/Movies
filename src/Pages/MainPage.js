@@ -37,9 +37,9 @@ function Copyright() {
 }
 
 const cards = [
-  { card: 1, name: 'blah' },
-  { card: 2, name: 'nope' },
-  { card: 3, name: 'haha' }
+  { card: 1, name: 'The Lego Movie' },
+  { card: 2, name: 'The Lego Movie' },
+  { card: 3, name: 'The Lego Movie' }
 ];
 
 const theme = createTheme();
@@ -77,10 +77,10 @@ export default function Album() {
               color="text.primary"
               gutterBottom
             >
-              Watchdawgs
+              Watchdawgs 
             </Typography>
             <Typography variant="h5" align="center" color="text.secondary" paragraph>
-              Book your tickets today!
+              The premier website for booking your next movie theater visit on UGA campus!
             </Typography>
             <Stack
               sx={{ pt: 4 }}
@@ -105,7 +105,7 @@ export default function Album() {
                       // 16:9
                       pt: '56.25%',
                     }}
-                    image="https://source.unsplash.com/random"
+                    image="https://m.media-amazon.com/images/M/MV5BMTg4MDk1ODExN15BMl5BanBnXkFtZTgwNzIyNjg3MDE@._V1_.jpg"
                     alt="random"
                   />
                   <CardContent sx={{ flexGrow: 1 }} title={`name : ${card.name}`}>

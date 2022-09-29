@@ -2,6 +2,12 @@
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
+
+# Necessary Packages 
+
+## `npm i mdb-react-ui-kit`
+## `npm i react-scripts`
+
 ## Available Scripts
 
 In the project directory, you can run:

@@ -10,6 +10,9 @@ import SignUp from './Pages/SignUp';
 import Book from './Pages/BookTickets';
 import RegistrationConfirm from './Pages/RegistrationConfirm';
 import AdminView from './Pages/AdminView';
+import PersonalProfile from './Pages/Profile';
+import Edit from './Pages/EditPage';
+
   
 function App() {
 return (
@@ -24,6 +27,8 @@ return (
         <Route path='/RegistrationConfirm' element={<RegistrationConfirm/>} />
         <Route path='/BookTickets' element={<Book/>} />
         <Route path='/AdminView' element={<AdminView/>} />
+        <Route path='/Profile' element={<PersonalProfile/>} />
+        <Route path='/EditPage' element={<Edit/>} />
     </Routes>
     </Router>
 );
