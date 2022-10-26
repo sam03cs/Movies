@@ -32,6 +32,17 @@ export default function EditPage() {
     </h1>
     <React.Fragment>
       <Grid container spacing={3}>
+      <Grid item xs={12}>
+          <TextField
+            id="password"
+            name="password"
+            label="Password"
+            fullWidth
+            autoComplete="password"
+            variant="standard"
+            color='error'
+          />
+        </Grid>
         <Grid item xs={12} sm={6}>
           <TextField
             id="firstName"
