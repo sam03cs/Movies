@@ -1,126 +1,194 @@
-import './EditPage.css'
-import React, { useState } from 'react';
+import * as React from 'react';
+import Avatar from '@mui/material/Avatar';
+import Button from '@mui/material/Button';
+import TextField from '@mui/material/TextField';
+import Grid from '@mui/material/Grid';
+import Paper from '@mui/material/Paper';
+import Typography from '@mui/material/Typography';
+import Container from '@mui/material/Container';
+import AccountCircleIcon from '@mui/icons-material/AccountCircle';
 
-import {
-    FormGroup,
-    Form,
-    Input,
-    Container,
-    Row,
-    Col,
-    Button,
-    Card,
-    CardHeader,
-    CardBody
-} from 'reactstrap';
-// core components
+export default function EditPage() {
+  const handleSubmit = (event) => {
+    event.preventDefault();
+    const data = new FormData(event.currentTarget);
+    console.log({
+      email: data.get('email'),
+      password: data.get('password'),
+    });
+  }
 
-export default function Edit() {
-  return (
-    <>
-      {/* Page content */}
-
-      <Container className="mt--7" fluid>
-        <Row>
-          {/* PRINCIPAL BODY */}
-          <Col className="order-xl-1" xl="8">
-            <Card className="bg-secondary shadow">
-              <CardHeader className="bg-white border-0">
-                <Row className="align-items-center">
-                  <Col xs="8">
-                    <h3 className="mb-0">My account</h3>
-                  </Col>
-                  <Col className="text-right" xs="4">
-                      <Button color="primary" size="sm">
-                        Save
-                      </Button>
-                   (
-                      <Button color="primary" size="sm">
-                        Edit
-                      </Button>
-                    )
-                  </Col>
-                </Row>
-              </CardHeader>
-              <CardBody>
-                <Form>
-                  <h6 className="heading-small text-muted mb-4">
-                    User information 
-                  </h6>
-                  <div className="pl-lg-4">
-                    <Row>
-                      <Col lg="6">
-                        <FormGroup>
-                          <label
-                            className="form-control-label"
-                            htmlFor="input-last-name"
-                          >
-                            E-mail
-                          </label>
-                          <Input
-                            className="form-control-alternative"
-                            id="email"
-                            required
-                            value={' '}
-                            type="text"
-                            name="email"
-                            placeholder="E-mail"
-                            disabled={' '}
-                          />
-                        </FormGroup>
-                      </Col>
-                    </Row>
-
-                    <Row>
-                      <Col lg="6">
-                        <FormGroup>
-                          <label
-                            className="form-control-label"
-                            htmlFor="input-first-name"
-                          >
-                            First name
-                          </label>
-                          <Input
-                            className="form-control-alternative"
-                            id="firstname"
-                            required
-                            value={' '}
-                            type="text"
-                            name="firstname"
-                            placeholder="First Name"
-                            disabled={' '}
-                          />
-                        </FormGroup>
-                      </Col>
-                      <Col lg="6">
-                        <FormGroup>
-                          <label
-                            className="form-control-label"
-                            htmlFor="input-first-name"
-                          >
-                            Last name
-                          </label>
-                          <Input
-                            className="form-control-alternative"
-                            id="lastname"
-                            required
-                            value={' '}
-                            type="text"
-                            name="lastname"
-                            placeholder="Last Name"
-                            disabled={' '}
-                          />
-                        </FormGroup>
-                      </Col>
-                    </Row>
-                  </div>
-                </Form>
-              </CardBody>
-            </Card>
-          </Col>
-        </Row>
-      </Container>
-    </>
+  return(
+<Container component="main" maxWidth="sm" sx={{ mb: 4 }}>
+  <Paper variant="outlined" sx={{ my: { xs: 3, md: 6 }, p: { xs: 2, md: 3 } }}>
+  <Typography>
+    <h1>
+      <center>
+        <Avatar sx={{ m: 1, bgcolor: 'secondary.main' }}>
+          <AccountCircleIcon />
+        </Avatar>
+        Edit Profile
+      </center>
+    </h1>
+    <React.Fragment>
+      <Grid container spacing={3}>
+        <Grid item xs={12} sm={6}>
+          <TextField
+            id="firstName"
+            name="firstName"
+            label="First name"
+            fullWidth
+            autoComplete="given-name"
+            variant="standard"
+            color='error'
+          />
+        </Grid>
+        <Grid item xs={12} sm={6}>
+          <TextField
+            id="lastName"
+            name="lastName"
+            label="Last name"
+            fullWidth
+            autoComplete="family-name"
+            variant="standard"
+            color='error'
+          />
+        </Grid>
+        <Grid item xs={12}>
+          <TextField
+            id="address1"
+            name="address1"
+            label="Address line 1"
+            fullWidth
+            autoComplete="shipping address-line1"
+            variant="standard"
+            color='error'
+          />
+        </Grid>
+        <Grid item xs={12}>
+          <TextField
+            id="address2"
+            name="address2"
+            label="Address line 2"
+            fullWidth
+            autoComplete="shipping address-line2"
+            variant="standard"
+            color='error'
+          />
+        </Grid>
+        <Grid item xs={12} sm={6}>
+          <TextField
+            id="city"
+            name="city"
+            label="City"
+            fullWidth
+            autoComplete="shipping address-level2"
+            variant="standard"
+            color='error'
+          />
+        </Grid>
+        <Grid item xs={12} sm={6}>
+          <TextField
+            id="state"
+            name="state"
+            label="State/Province/Region"
+            fullWidth
+            variant="standard"
+            color='error'
+          />
+        </Grid>
+        <Grid item xs={12} sm={6}>
+          <TextField
+            id="zip"
+            name="zip"
+            label="Zip / Postal code"
+            fullWidth
+            autoComplete="shipping postal-code"
+            variant="standard"
+            color='error'
+          />
+        </Grid>
+        <Grid item xs={12} sm={6}>
+          <TextField
+            id="country"
+            name="country"
+            label="Country"
+            fullWidth
+            autoComplete="shipping country"
+            variant="standard"
+            color='error'
+          />
+        </Grid>
+      </Grid>
+    </React.Fragment>
+    <div><br></br></div>
+    <React.Fragment>
+    <Typography variant="h6" gutterBottom>
+       <h3>
+        <center>
+          Payment method
+        </center>
+      </h3>
+    </Typography>
+    <Grid container spacing={3}>
+      <Grid item xs={12} md={6}>
+        <TextField
+          id="cardName"
+          label="Name on card"
+          fullWidth
+          autoComplete="cc-name"
+          variant="standard"
+          color='error'
+        />
+      </Grid>
+      <Grid item xs={12} md={6}>
+        <TextField
+          id="cardNumber"
+          label="Card number"
+          fullWidth
+          autoComplete="cc-number"
+          variant="standard"
+          color='error'
+        />
+      </Grid>
+      <Grid item xs={12} md={6}>
+        <TextField
+          id="expDate"
+          label="Expiry date"
+          fullWidth
+          autoComplete="cc-exp"
+          variant="standard"
+          color='error'
+        />
+      </Grid>
+      <Grid item xs={12} md={6}>
+        <TextField
+          id="cvv"
+          label="CVV"
+          helperText="Last three digits on signature strip"
+          fullWidth
+          autoComplete="cc-csc"
+          variant="standard"
+          color='error'
+        />
+      </Grid>
+      <Grid item xs={12} md={6}>
+        <Button
+          onSubmit={handleSubmit}
+          type="submit"
+          fullWidth
+          variant="contained"
+          style= {{ backgroundColor: 'red'}}
+          sx={{ mt: 3, mb: 2 }}
+        >
+          Confirm
+        </Button>
+      </Grid>
+    </Grid>
+  </React.Fragment>
+</Typography>
+</Paper>
+</Container>
+    
   );
-                    }
-
+}

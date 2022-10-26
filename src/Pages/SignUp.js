@@ -38,6 +38,13 @@ export default function SignUp() {
     });
   };
 
+  const [message, setMessage] = React.useState('');
+
+  const handleChange = event => {
+    setMessage(event.target.value);
+    //console.log('value is: ', event.target.value);
+  }
+
   return (
     <ThemeProvider theme={theme}>
       <Container component="main" maxWidth="xs">
@@ -67,7 +74,8 @@ export default function SignUp() {
                   id="firstName"
                   label="First Name"
                   autoFocus
-                  inputProps= {{ style: { color:'red' }}}
+                  inputProps= {{ style: { color:'black' }}}
+                  color='error'
                 />
               </Grid>
               <Grid item xs={12} sm={6}>
@@ -78,6 +86,7 @@ export default function SignUp() {
                   label="Last Name"
                   name="lastName"
                   autoComplete="family-name"
+                  color='error'
                 />
               </Grid>
               <Grid item xs={12}>
@@ -88,6 +97,9 @@ export default function SignUp() {
                   label="Email Address"
                   name="email"
                   autoComplete="email"
+                  color='error'
+                  onChange={handleChange}
+                  value={message}
                 />
               </Grid>
               <Grid item xs={12}>
@@ -99,6 +111,7 @@ export default function SignUp() {
                   type="password"
                   id="password"
                   autoComplete="new-password"
+                  color='error'
                 />
               </Grid>
               <Grid item xs={12}>
@@ -119,9 +132,10 @@ export default function SignUp() {
             </Button>
             <Grid container justifyContent="flex-end">
               <Grid item>
-                <Link href="/SignIn" variant="body2" style= {{ color: 'red'}}>
+                <Link href="/SignIn" variant="body2" underline='none' style= {{ color: 'red'}}>
                   Already have an account? Sign in
                 </Link>
+                <div>{message}</div>
               </Grid>
             </Grid>
           </Box>

@@ -21,6 +21,7 @@ export default function AddressForm() {
             fullWidth
             autoComplete="given-name"
             variant="standard"
+            color='error'
           />
         </Grid>
         <Grid item xs={12} sm={6}>
@@ -32,6 +33,7 @@ export default function AddressForm() {
             fullWidth
             autoComplete="family-name"
             variant="standard"
+            color='error'
           />
         </Grid>
         <Grid item xs={12}>
@@ -43,6 +45,7 @@ export default function AddressForm() {
             fullWidth
             autoComplete="shipping address-line1"
             variant="standard"
+            color='error'
           />
         </Grid>
         <Grid item xs={12}>
@@ -53,6 +56,7 @@ export default function AddressForm() {
             fullWidth
             autoComplete="shipping address-line2"
             variant="standard"
+            color='error'
           />
         </Grid>
         <Grid item xs={12} sm={6}>
@@ -64,6 +68,7 @@ export default function AddressForm() {
             fullWidth
             autoComplete="shipping address-level2"
             variant="standard"
+            color='error'
           />
         </Grid>
         <Grid item xs={12} sm={6}>
@@ -73,6 +78,7 @@ export default function AddressForm() {
             label="State/Province/Region"
             fullWidth
             variant="standard"
+            color='error'
           />
         </Grid>
         <Grid item xs={12} sm={6}>
@@ -84,6 +90,7 @@ export default function AddressForm() {
             fullWidth
             autoComplete="shipping postal-code"
             variant="standard"
+            color='error'
           />
         </Grid>
         <Grid item xs={12} sm={6}>
@@ -95,6 +102,7 @@ export default function AddressForm() {
             fullWidth
             autoComplete="shipping country"
             variant="standard"
+            color='error'
           />
         </Grid>
         <Grid item xs={12}>

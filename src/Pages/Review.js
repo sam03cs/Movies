@@ -60,6 +60,7 @@ export default function Review() {
             id="cardName"
             label="Promo Code"
             width="50%"
+            color='error'
           />
         <ListItem sx={{ py: 1, px: 0 }}>
           <ListItemText primary="Shipping" />

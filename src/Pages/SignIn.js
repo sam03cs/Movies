@@ -27,6 +27,8 @@ function Copyright(props) {
 }
 
 const theme = createTheme();
+//const getEmail = document.querySelector('TextField[id="email"]');
+//const em = getEmail.value;
 
 export default function SignIn() {
   const handleSubmit = (event) => {
@@ -66,6 +68,7 @@ export default function SignIn() {
               name="email"
               autoComplete="email"
               autoFocus
+              color='error'
             />
             <TextField
               margin="normal"
@@ -76,6 +79,7 @@ export default function SignIn() {
               type="password"
               id="password"
               autoComplete="current-password"
+              color='error'
             />
             <FormControlLabel
               control={<Checkbox value="remember" style= {{ color: "red" }} />}
@@ -92,12 +96,12 @@ export default function SignIn() {
             </Button>
             <Grid container>
               <Grid item xs>
-                <Link href="#" variant="body2" style= {{ color: 'red'}}>
+                <Link href="#" variant="body2" underline='none' style= {{ color: 'red'}}>
                   Forgot password?
                 </Link>
               </Grid>
               <Grid item>
-                <Link href="/SignUp" variant="body2" style= {{ color: 'red'}}>
+                <Link href="/SignUp" variant="body2" underline='none' style= {{ color: 'red'}}>
                   {"Don't have an account? Sign Up"}
                 </Link>
               </Grid>
