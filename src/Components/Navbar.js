@@ -7,32 +7,35 @@ const Navbar = () => {
     <>
       <Nav>
         <NavMenu>
-          <NavLink to="/MainPage" activeStyle>
+          <NavLink to="/MainPage" activestyle='true'>
             Home
           </NavLink>
-          <NavLink to="/SignUp" activeStyle>
+          <NavLink to="/SignUp" activestyle='true'>
             Sign Up
           </NavLink>
-          <NavLink to="/SignIn" activeStyle>
+          <NavLink to="/SignIn" activestyle='true'>
             Login
           </NavLink>
-          <NavLink to="/Checkout" activeStyle>
+          <NavLink to="/Checkout" activestyle='true'>
             Checkout
           </NavLink>
-          <NavLink to="/RegistrationConfirm" activeStyle>
+          <NavLink to="/RegistrationConfirm" activestyle='true'>
             Registration Confirmation
           </NavLink>
-          <NavLink to="/BookTickets" activeStyle>
+          <NavLink to="/BookTickets" activestyle='true'>
             Book
           </NavLink>
-          <NavLink to="/AdminView" activeStyle>
+          <NavLink to="/AdminView" activestyle='true'>
             Admin
             </NavLink>
-          <NavLink to="/Profile" activeStyle>
+          <NavLink to="/Profile" activestyle='true'>
             Profile
           </NavLink>
-          <NavLink to="/EditPage" activeStyle>
+          <NavLink to="/EditPage" activestyle='true'>
             Edit profile
+          </NavLink>
+          <NavLink to='/Logout' activestyle='true'>
+            Logout
           </NavLink>
         </NavMenu>
       </Nav>

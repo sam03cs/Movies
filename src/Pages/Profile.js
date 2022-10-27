@@ -11,45 +11,52 @@ import { useNavigate } from "react-router-dom";
 /*import List from '@mui/material/List';
 import ListItem from '@mui/material/ListItem';
 import ListItemText from '@mui/material/ListItemText';*/
+import { getDatabase, ref, child, get } from "firebase/database";
+import { useState } from 'react'
+//import { currentUser } from 'firebase/auth';
+import { useAuth } from '../Contexts/AuthContext'
 
-/*function fields(){
-  const firstName = 'Betty';
-  const lastName = 'White';
-  const addOne = '123 Sesame St';
-  const addTwo = '';
-  const city = 'Wakanda';
-  const state = 'Alaska';
-}
-*/
+
+
 const prof = [
   {
-    email: 'Bettycakes@gotmilk.com',
-    firstName: 'Betty',
-    lastName: 'White',
-    addOne: '123 Sesame St',
+    email: '',
+    firstName: '',
+    lastName: '',
+    addOne: '',
     addTwo: '',
-    city: 'Wakanda',
-    state: 'Alaska',
-    zip: '00000',
-    country: 'Australia'
+    city: '',
+    state: '',
+    zip: '',
+    country: ''
   }
 ];
 
 const payment = [
   {
-    name: 'Betty P White',
-    cardnum: '1111 1111 1111 1111',
-    exp: '06/09',
-    cvv: '420',
+    name: '',
+    cardnum: '',
+    exp: '',
+    cvv: '',
   }
 ];
 
 export default function Profile(){
-  let navigate = useNavigate(); 
-  const routeChange = () =>{ 
-    let path = '/EditPage'; 
-    navigate(path);
+  //const [currentUser, logout] = useAuth()
+  const [userId, getUserId] = useState()
+  const dbRef = ref(getDatabase());
+  const navigate = useNavigate()
+  const routeChange = () => navigate('/EditPage')
+  const [currentUser, setCurrentUser] = useState()
+get(child(dbRef, `users/${currentUser}`)).then((snapshot) => {
+  if (snapshot.exists()) {
+    console.log(snapshot.val());
+  } else {
+    console.log("No data available");
   }
+}).catch((error) => {
+  console.error(error);
+});
 
   return(
     <Typography>

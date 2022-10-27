@@ -12,11 +12,16 @@ import RegistrationConfirm from './Pages/RegistrationConfirm';
 import AdminView from './Pages/AdminView';
 import PersonalProfile from './Pages/Profile';
 import Edit from './Pages/EditPage';
+import { AuthProvider } from "./Contexts/AuthContext"
+import ForgotPassword from './Pages/ForgotPassword'
+import Logout from './Pages/Logout'
+import UpdatePassword from './Pages/UpdatePassword'
 
   
 function App() {
 return (
     <Router>
+        <AuthProvider>
     <Navbar />
     <Routes>
         <Route exact path='/' element={<Album />} />
@@ -29,7 +34,11 @@ return (
         <Route path='/AdminView' element={<AdminView/>} />
         <Route path='/Profile' element={<PersonalProfile/>} />
         <Route path='/EditPage' element={<Edit/>} />
+        <Route path='/ForgotPassword' element={<ForgotPassword/>} />
+        <Route path='/Logout' element={<Logout/>} />
+        <Route path='/UpdatePassword' element={<UpdatePassword/>} />
     </Routes>
+    </AuthProvider>
     </Router>
 );
 }
