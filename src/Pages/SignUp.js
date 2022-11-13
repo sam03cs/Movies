@@ -20,6 +20,7 @@ import Box from '@mui/material/Box';
 import LockOutlinedIcon from '@mui/icons-material/LockOutlined';
 import Typography from '@mui/material/Typography';
 import Container from '@mui/material/Container';
+import './SignUpLogin.css'
 //import { createTheme, ThemeProvider } from '@mui/material/styles';
 
 function Copyright(props) {
@@ -76,7 +77,7 @@ export default function SignUp() {
 
   return (
     <>
-      <Card>
+
         <center>
 
           <h2 className="text-center mb-4">Sign Up</h2>
@@ -123,17 +124,17 @@ export default function SignUp() {
                   type='password'
                   ref={passwordConfirmRef}
                 /> */}
-            <Form.Group id="email">
+            <Form.Group id="email" class='email'>
               <Form.Label>Email </Form.Label>
               <Form.Control type="email" ref={emailRef} required />
             </Form.Group>
             <br/>
-            <Form.Group id="password">
+            <Form.Group id="password" class='password'>
               <Form.Label>Password </Form.Label>
               <Form.Control type="password" ref={passwordRef} required />
             </Form.Group>
             <br/>
-            <Form.Group id="password-confirm">
+            <Form.Group id="password-confirm" class='passconf'>
               <Form.Label>Password Confirmation </Form.Label>
               <Form.Control type="password" ref={passwordConfirmRef} required />
             </Form.Group>
@@ -157,7 +158,7 @@ export default function SignUp() {
         Already have an account? <Link to="/SignIn" variant="body2" underline='none' style= {{ color: 'red'}}>Log In</Link>
       </div>
       </center>
-      </Card>
+
     </>
     
   )

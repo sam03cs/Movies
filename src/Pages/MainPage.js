@@ -37,9 +37,15 @@ function Copyright() {
 }
 
 const cards = [
-  { card: 1, name: 'The Lego Movie' },
-  { card: 2, name: 'The Lego Movie' },
-  { card: 3, name: 'The Lego Movie' }
+  { card: 1, name: 'The Lego Movie', image: "https://m.media-amazon.com/images/M/MV5BMTg4MDk1ODExN15BMl5BanBnXkFtZTgwNzIyNjg3MDE@._V1_.jpg"},
+  { card: 2, name: 'Batman', image: "https://i.ebayimg.com/images/g/zRAAAOSwvaJgJSg1/s-l500.jpg"},
+  { card: 3, name: 'Hello Kitty', image: "https://i.ebayimg.com/images/g/X5AAAOSwn21ixz0l/s-l500.png" }
+];
+
+const ucards = [
+  { card: 1, name: 'Batman v Superman', image: "https://cdn11.bigcommerce.com/s-yzgoj/images/stencil/1280x1280/products/1519914/3835138/XPSMX5072__16213.1654734420.jpg?c=2"},
+  { card: 2, name: 'Black Adam', image: "https://i.ebayimg.com/images/g/BdoAAOSwzgdiHKBN/s-l500.jpg"},
+  { card: 3, name: 'Black Panther: Wakanda Forever', image: "https://m.media-amazon.com/images/M/MV5BNTM4NjIxNmEtYWE5NS00NDczLTkyNWQtYThhNmQyZGQzMjM0XkEyXkFqcGdeQXVyODk4OTc3MTY@._V1_.jpg" }
 ];
 
 const theme = createTheme();
@@ -91,6 +97,44 @@ export default function Album() {
             </Stack>
           </Container>
         </Box>
+
+          <h1><center>Upcoming Movies</center></h1>
+
+        <Container sx={{ py: 8 }} maxWidth="md">
+          {/* End hero unit */}
+          <Grid container spacing={4}>
+            {ucards.map((card) => (
+              <Grid item key={ucards.indexOf(card)} xs={12} sm={6} md={4}>
+                <Card
+                  sx={{ height: '100%', display: 'flex', flexDirection: 'column' }}
+                >
+                  <CardMedia
+                    component="img"
+                    sx={{
+                      // 16:9
+                      pt: '0%',
+                    }}
+                    image={card.image}//"https://m.media-amazon.com/images/M/MV5BMTg4MDk1ODExN15BMl5BanBnXkFtZTgwNzIyNjg3MDE@._V1_.jpg"
+                    alt="random"
+                  />
+                  <CardContent sx={{ flexGrow: 1 }} title={`name : ${card.name}`}>
+                    <Typography gutterBottom variant="h5" component="h2">
+                      {card.name}
+                    </Typography>
+                  </CardContent>
+                  <CardActions>
+                    <MainModal />
+                  </CardActions>
+                </Card>
+              </Grid>
+            ))}
+          </Grid>
+        </Container>
+
+        <br></br><br></br>
+        <br></br><br></br>
+        <h1><center>Now Showing</center></h1>
+
         <Container sx={{ py: 8 }} maxWidth="md">
           {/* End hero unit */}
           <Grid container spacing={4}>
@@ -103,14 +147,14 @@ export default function Album() {
                     component="img"
                     sx={{
                       // 16:9
-                      pt: '56.25%',
+                      pt: '0%',
                     }}
-                    image="https://m.media-amazon.com/images/M/MV5BMTg4MDk1ODExN15BMl5BanBnXkFtZTgwNzIyNjg3MDE@._V1_.jpg"
+                    image={card.image}//"https://m.media-amazon.com/images/M/MV5BMTg4MDk1ODExN15BMl5BanBnXkFtZTgwNzIyNjg3MDE@._V1_.jpg"
                     alt="random"
                   />
                   <CardContent sx={{ flexGrow: 1 }} title={`name : ${card.name}`}>
                     <Typography gutterBottom variant="h5" component="h2">
-                      The Lego Movie
+                      {card.name}
                     </Typography>
                   </CardContent>
                   <CardActions>
@@ -121,6 +165,7 @@ export default function Album() {
             ))}
           </Grid>
         </Container>
+
       </main>
       {/* Footer */}
       <Box sx={{ bgcolor: 'background.paper', p: 6 }} component="footer">

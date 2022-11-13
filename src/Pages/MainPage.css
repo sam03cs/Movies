@@ -10,16 +10,18 @@
     margin-left: 90%;
     text-decoration: none;
     display: flex;
-    position: absolute;
+    position: relative;
+    float: right;
 }
 .login:hover {
     color: red;
 }
 
 .search {
-    position: absolute;
+    position: relative;
     margin-left: 85%;
     text-align: center;
     display: flex;
     color: white;
+    float: right;
 }

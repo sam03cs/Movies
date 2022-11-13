@@ -20,11 +20,13 @@
 }
 
 .Time {
-    margin-bottom: 30px;
+  margin-bottom: 30px;
+  margin-left: 4px;
 }
 
 .Age {
-    margin-bottom: 36px;
+  margin-bottom: 36px;
+  margin-left: 47px;
 }
 
 .Movies select {
