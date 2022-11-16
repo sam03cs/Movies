@@ -1,4 +1,5 @@
-import * as React from 'react';
+//import * as React from 'react';
+import React, {useEffect, useState} from 'react';
 import AppBar from '@mui/material/AppBar';
 //import Button from '@mui/material/Button';
 //import CameraIcon from '@mui/icons-material/PhotoCamera';
@@ -22,6 +23,9 @@ import MainModal from '../Components/Modal';
 import SearchModal from '../Components/Search';
 import PetsIcon from '@mui/icons-material/Pets';
 //import { NavLink } from 'react-router-dom';
+//firebase imports needed to access database
+import {db} from '../firebase';
+import { collection, deleteDoc, onSnapshot, doc } from 'firebase/firestore';
 
 function Copyright() {
   return (
@@ -50,7 +54,30 @@ const ucards = [
 
 const theme = createTheme();
 
-export default function Album() {
+const Album = () => {
+//export default function Album() {
+//these consts and useeffeect allow for fetching from database
+  const [users, setUsers] = useState([]);
+  const [loading,setLoading] = useState(false);
+
+  useEffect(() => {
+    setLoading(true);
+    //the collection db, "users" calls upon a database named users in the firebase setup
+    const unsub = onSnapshot(collection(db,"users"), (snapshot) => {
+      let list = [];
+      snapshot.docs.forEach((doc) => {
+        list.push({id: doc.id, ...doc.data()})
+      });
+      setUsers(list);
+      setLoading(false)
+
+    }, (error)=> {
+      console.log(error);
+    });
+    return () => {
+      unsub();
+    };
+  }, []);
   return (
     <ThemeProvider theme={theme}>
       <CssBaseline />
@@ -102,7 +129,45 @@ export default function Album() {
 
         <Container sx={{ py: 8 }} maxWidth="md">
           {/* End hero unit */}
-          <Grid container spacing={4}>
+
+
+ {/* below are samir's changes, the database fields are name, rating, genre, info, datetime, and img
+right now img is blank because i'm still working on getting the image to load
+also datetime is just stored as a string bc im working on getting the date and time to store correctly */}
+
+
+ <Grid container spacing={4}>
+          {users && users.map((item) => (
+            <Grid item key = {item.id} xs={12} sm={6} md={4}>
+                <Card sx={{ height: '100%', display: 'flex', flexDirection: 'column' }}>
+                <CardMedia
+                component="img"
+                height="140"
+                image={item.img}
+                alt="get from database"
+              />
+                <CardContent sx={{ flexGrow: 1 }} title={`name : ${item.name}`}>
+                <Typography gutterBottom variant="h5" component="h2">
+                      {item.name}
+                    </Typography>
+                    <Typography variant="body2" >
+                      {item.rating}
+                    </Typography>
+                    <Typography variant="body2" >
+                      {item.genre}
+                    </Typography>
+                    <Typography variant="body2" >
+                      {item.info}
+                    </Typography>
+                    <Typography variant="body2" >
+                      {item.datetime}
+                    </Typography>
+
+                  </CardContent>
+                </Card>
+            </Grid>
+          ))}
+
             {ucards.map((card) => (
               <Grid item key={ucards.indexOf(card)} xs={12} sm={6} md={4}>
                 <Card
@@ -185,4 +250,5 @@ export default function Album() {
       {/* End footer */}
     </ThemeProvider>
   );
-}
+};
+export default Album;
