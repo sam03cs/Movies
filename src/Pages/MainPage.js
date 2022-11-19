@@ -19,13 +19,22 @@ import { createTheme, ThemeProvider } from '@mui/material/styles';
 import "./MainPage.css";
 //import Navbar from '../Components/Navbar';
 //import SearchBar from '../Components/Searchbar';
-import MainModal from '../Components/Modal';
+//import MainModal from '../Components/Modal';
 import SearchModal from '../Components/Search';
 import PetsIcon from '@mui/icons-material/Pets';
+import FilterListIcon from '@mui/icons-material/FilterList';
 //import { NavLink } from 'react-router-dom';
 //firebase imports needed to access database
 import {db} from '../firebase';
 import { collection, deleteDoc, onSnapshot, doc } from 'firebase/firestore';
+//import * as React from 'react';
+//import Box from '@mui/material/Box';
+import Button from '@mui/material/Button';
+//import Typography from '@mui/material/Typography';
+import Modal from '@mui/material/Modal';
+import YoutubeEmbed from "../Components/YoutubeEmbed";
+import {useNavigate} from 'react-router-dom'
+
 
 function Copyright() {
   return (
@@ -39,6 +48,18 @@ function Copyright() {
     </Typography>
   );
 }
+
+const style = {
+  position: 'absolute',
+  top: '50%',
+  left: '50%',
+  transform: 'translate(-50%, -50%)',
+  width: 400,
+  bgcolor: 'background.paper',
+  border: '2px solid #000',
+  boxShadow: 24,
+  p: 4,
+};
 
 const cards = [
   { card: 1, name: 'The Lego Movie', image: "https://m.media-amazon.com/images/M/MV5BMTg4MDk1ODExN15BMl5BanBnXkFtZTgwNzIyNjg3MDE@._V1_.jpg"},
@@ -57,18 +78,21 @@ const theme = createTheme();
 const Album = () => {
 //export default function Album() {
 //these consts and useeffeect allow for fetching from database
-  const [users, setUsers] = useState([]);
+
+  const [movies, setMovies] = useState([]);
   const [loading,setLoading] = useState(false);
+
+  
 
   useEffect(() => {
     setLoading(true);
-    //the collection db, "users" calls upon a database named users in the firebase setup
-    const unsub = onSnapshot(collection(db,"users"), (snapshot) => {
+    //the collection db, "movies" calls upon a database named movies in the firebase setup
+    const unsub = onSnapshot(collection(db,"movies"), (snapshot) => {
       let list = [];
       snapshot.docs.forEach((doc) => {
         list.push({id: doc.id, ...doc.data()})
       });
-      setUsers(list);
+      setMovies(list);
       setLoading(false)
 
     }, (error)=> {
@@ -78,6 +102,16 @@ const Album = () => {
       unsub();
     };
   }, []);
+
+  const [open, setOpen] = useState(false);
+  const handleOpen = () => setOpen(true);
+  const handleClose = () => setOpen(false);
+  const [modalData, setModalData] = useState('');
+  const navigate = useNavigate();
+  const navigateToBooking = () => {
+    navigate('/BookTickets');
+  }
+
   return (
     <ThemeProvider theme={theme}>
       <CssBaseline />
@@ -137,12 +171,12 @@ also datetime is just stored as a string bc im working on getting the date and t
 
 
  <Grid container spacing={4}>
-          {users && users.map((item) => (
+          {movies && movies.map((item) => (
             <Grid item key = {item.id} xs={12} sm={6} md={4}>
                 <Card sx={{ height: '100%', display: 'flex', flexDirection: 'column' }}>
                 <CardMedia
                 component="img"
-                height="140"
+                height="100%"
                 image={item.img}
                 alt="get from database"
               />
@@ -162,8 +196,35 @@ also datetime is just stored as a string bc im working on getting the date and t
                     <Typography variant="body2" >
                       {item.datetime}
                     </Typography>
+                    <Button onClick={() => {setOpen(true); setModalData(item);}} style= {{ color: 'red'}}>View</Button>
+                    <Modal
+                      open={open}
+                      onClose={handleClose}
+                    >
+                    <Box sx={style}>
+                      <Typography variant="h6" component="h2">
+                        {modalData.name}
+                      </Typography>
+                      <Typography class='rating'>
+                        {modalData.genre} | {modalData.rating}
+                      </Typography>
+                      <div sx='h1' style= {{ color: 'red'}}>
+                        Showtimes
+                      </div>
+                      <Typography class="showtime">
+                        11:00am 6:00pm 10:30pm
+                      </Typography>
+                      <Button onClick={navigateToBooking} variant="contained" style= {{ backgroundColor: 'red'}}>Book Tickets</Button>
+                      <div><br></br></div>
+                      <YoutubeEmbed embedId={modalData.youtubelink} />
+                      <Typography id="modal-modal-description" sx={{ mt: 2 }}>
+                        {modalData.info}
+                      </Typography>
+                    </Box>
+                    </Modal>
 
                   </CardContent>
+                  
                 </Card>
             </Grid>
           ))}
@@ -188,7 +249,7 @@ also datetime is just stored as a string bc im working on getting the date and t
                     </Typography>
                   </CardContent>
                   <CardActions>
-                    <MainModal />
+                    {/*<MainModal />*/}
                   </CardActions>
                 </Card>
               </Grid>
@@ -223,7 +284,7 @@ also datetime is just stored as a string bc im working on getting the date and t
                     </Typography>
                   </CardContent>
                   <CardActions>
-                    <MainModal />
+                    {/*<MainModal />*/}
                   </CardActions>
                 </Card>
               </Grid>

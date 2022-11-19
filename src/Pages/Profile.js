@@ -16,6 +16,8 @@ import { useState } from 'react'
 //import { currentUser } from 'firebase/auth';
 import { useAuth } from '../Contexts/AuthContext'
 
+import { getAuth, onAuthStateChanged } from 'firebase/auth'
+import firebase from 'firebase/compat/app';
 
 
 const prof = [
@@ -41,6 +43,7 @@ const payment = [
   }
 ];
 
+
 export default function Profile(){
   //const [currentUser, logout] = useAuth()
   const [userId, getUserId] = useState()
@@ -48,15 +51,36 @@ export default function Profile(){
   const navigate = useNavigate()
   const routeChange = () => navigate('/EditPage')
   const [currentUser, setCurrentUser] = useState()
-get(child(dbRef, `users/${currentUser}`)).then((snapshot) => {
+
+  const [name, getName] = useState()
+  const [last, getLast] = useState()
+  const [addone, getAddone] = useState()
+  const [addtwo, getAddtwo] = useState()
+  const [city, getCity] = useState()
+  const [state, getState] = useState()
+  const [zip, getZip] = useState()
+  const [country, getCountry] = useState()
+
+  const db = getDatabase();
+  firebase.auth().onAuthStateChanged((user) => {
+    if(user) {
+      const uid = user.uid;
+
+
+get(child(dbRef, `users/${uid}`)).then((snapshot) => {
   if (snapshot.exists()) {
-    console.log(snapshot.val());
+    //console.log(snapshot.val());
+    const val = snapshot.val();
+    return val;
   } else {
     console.log("No data available");
   }
 }).catch((error) => {
   console.error(error);
 });
+}}
+)
+
 
   return(
     <Typography>

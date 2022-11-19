@@ -240,10 +240,11 @@ import Button from '@mui/material/Button';
 //   );
 // }
 
-import {useState, useNavigate} from 'react';
-import database from 'firebase/compat/app';
+import {useState} from 'react';
+import firebase from 'firebase/compat/app';
 import { getDatabase, ref, set } from "firebase/database";
-import { getAuth } from 'firebase/auth'
+import { getAuth, onAuthStateChanged } from 'firebase/auth'
+import { useNavigate } from 'react-router-dom'
 
 // function Edit() {
 // const [name , setName] = useState();
@@ -260,7 +261,7 @@ import { getAuth } from 'firebase/auth'
 
 function Edit(/*userId, name, age, last*/) {
 
-  const [UID, setUID] = useState()
+  const [UID, getUID] = useState()
   const [name, setName] = useState()
   const [last, setLast] = useState()
   const [addone, setAddone] = useState()
@@ -279,10 +280,15 @@ function Edit(/*userId, name, age, last*/) {
   const [cvv, setCvv] = useState()
   const auth = getAuth()
   const [currentUser, setCurrentUser] = useState()
+  const navigate = useNavigate()
 
 const Push = () => {
   const db = getDatabase();
-  set(ref(db, `users/${currentUser}`), {
+  firebase.auth().onAuthStateChanged((user) => {
+    if(user) {
+      const uid = user.uid;
+
+  set(ref(db, `/users/${uid}`), {
     firstname: name,
     lastname: last,
     addone: addone,
@@ -292,13 +298,16 @@ const Push = () => {
     zip: zip,
     country: country,
     /*oldpassword: oldpassword,
-    newpassword: newpassword,*/
+    newpassword: newpassword,
     cardname: cardname,
     cardnum: cardnum,
     exp: exp,
-    cvv: cvv,
+    cvv: cvv,*/
 
   });
+}
+});
+  navigate('/Profile')
 }
 
 
