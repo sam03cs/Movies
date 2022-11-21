@@ -5,6 +5,7 @@ import InputBase from '@mui/material/InputBase';
 import IconButton from '@mui/material/IconButton';
 //import MenuIcon from '@mui/icons-material/Menu';
 import SearchIcon from '@mui/icons-material/Search';
+import { PropaneSharp } from '@mui/icons-material';
 //import DirectionsIcon from '@mui/icons-material/Directions';
 /*<IconButton sx={{ p: '10px' }} aria-label="menu">
         <MenuIcon />
@@ -20,6 +21,7 @@ export default function SearchBar() {
         sx={{ ml: 1, flex: 1 }}
         placeholder="Search Movies"
         inputProps={{ 'aria-label': 'search movies' }}
+        //onChange={props.handleChange}
       />
       <IconButton type="button" sx={{ p: '10px' }} aria-label="search">
         <SearchIcon />
