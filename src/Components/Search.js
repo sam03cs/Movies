@@ -33,11 +33,11 @@ export default function SearchModal() {
   const handleClose = () => setOpen(false);
   useEffect(() => {
     const fetchData = async () => {
-      const data = await db.collection("movies").orderBy("genre").get();
+      const data = await db.collection("movies").get();
       setMovies(data.docs.map((doc) => ({ ...doc.data(), id: doc.id })));
     };
     fetchData();
-  }, []);
+  }, [movies]);
   /* useEffect(() => {
     setFilteredMovies(
       movies.filter(
