@@ -231,32 +231,6 @@ also datetime is just stored as a string bc im working on getting the date and t
                 </Card>
             </Grid>
           ))}
-
-            {ucards.map((card) => (
-              <Grid item key={ucards.indexOf(card)} xs={12} sm={6} md={4}>
-                <Card
-                  sx={{ height: '100%', display: 'flex', flexDirection: 'column' }}
-                >
-                  <CardMedia
-                    component="img"
-                    sx={{
-                      // 16:9
-                      pt: '0%',
-                    }}
-                    image={card.image}//"https://m.media-amazon.com/images/M/MV5BMTg4MDk1ODExN15BMl5BanBnXkFtZTgwNzIyNjg3MDE@._V1_.jpg"
-                    alt="random"
-                  />
-                  <CardContent sx={{ flexGrow: 1 }} title={`name : ${card.name}`}>
-                    <Typography gutterBottom variant="h5" component="h2">
-                      {card.name}
-                    </Typography>
-                  </CardContent>
-                  <CardActions>
-                    {/*<MainModal />*/}
-                  </CardActions>
-                </Card>
-              </Grid>
-            ))}
           </Grid>
         </Container>
 
