@@ -81,6 +81,17 @@ const Album = () => {
 
   const [movies, setMovies] = useState([]);
   const [loading,setLoading] = useState(false);
+  const [searchResults, setSearchResults] = useState([]);
+
+  /*const handleChange = e => {
+    let filterResults = movies.filter(record => {
+      record.title.toLowerCase().includes(e.target.value.toLowerCase())
+    })
+
+    console.log('filterResults: \n', filterResults);
+
+    setSearchResults(filterResults);
+  }; */
 
   
 
@@ -93,7 +104,8 @@ const Album = () => {
         list.push({id: doc.id, ...doc.data()})
       });
       setMovies(list);
-      setLoading(false)
+      setSearchResults(list);
+      setLoading(false);
 
     }, (error)=> {
       console.log(error);
