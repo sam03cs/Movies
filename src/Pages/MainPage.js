@@ -21,6 +21,7 @@ import "./MainPage.css";
 //import SearchBar from '../Components/Searchbar';
 //import MainModal from '../Components/Modal';
 import SearchModal from '../Components/Search';
+import Search from '../Components/Searchy';
 import PetsIcon from '@mui/icons-material/Pets';
 import FilterListIcon from '@mui/icons-material/FilterList';
 //import { NavLink } from 'react-router-dom';
@@ -81,6 +82,7 @@ const Album = () => {
 
   const [movies, setMovies] = useState([]);
   const [loading,setLoading] = useState(false);
+  //const [searchResults, setSearchResults] = useState([]);
 
   
 
@@ -93,6 +95,7 @@ const Album = () => {
         list.push({id: doc.id, ...doc.data()})
       });
       setMovies(list);
+      //setSearchResults(list);
       setLoading(false)
 
     }, (error)=> {

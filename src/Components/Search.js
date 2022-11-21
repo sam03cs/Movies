@@ -1,11 +1,14 @@
-import * as React from 'react';
+import React, { useEffect, useState } from "react";
 import Box from '@mui/material/Box';
 import Button from '@mui/material/Button';
 //import Typography from '@mui/material/Typography';
 import Modal from '@mui/material/Modal';
 import SearchIcon from '@mui/icons-material/Search';
-import SearchBar from './Searchbar';
+//import SearchBar from './Searchbar';
 //import IconButton from '@mui/material/IconButton';
+//import { db } from "../firebase";
+//import { MovieSharp } from "@mui/icons-material";
+import Search from './Searchy';
 
 const style = {
   position: 'absolute',
@@ -21,6 +24,7 @@ const style = {
 };
 
 export default function SearchModal() {
+
   const [open, setOpen] = React.useState(false);
   const handleOpen = () => setOpen(true);
   const handleClose = () => setOpen(false);
@@ -37,7 +41,7 @@ export default function SearchModal() {
         aria-describedby="modal-modal-description"
       >
         <Box sx={style}>
-          <SearchBar />
+          <Search />
         </Box>
       </Modal>
     </div>
