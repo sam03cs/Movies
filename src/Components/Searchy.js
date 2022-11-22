@@ -12,6 +12,7 @@ import Box from '@mui/material/Box';
 
 export default function Search() {
   const [value, setValue] = useState("");
+  const [eMessage, setError] = useState("");
 
   const [open, setOpen] = useState(false);
   //const handleOpen = () => setOpen(true);
@@ -55,6 +56,7 @@ export default function Search() {
       });
       setMovies(list);
       setLoading(false)
+    
 
     }, (error)=> {
       console.log(error);
@@ -69,7 +71,7 @@ export default function Search() {
 
       <div className="search-container">
         <div className="search-inner">
-          <input type="text" value={value} onChange={onChange} />
+          <input type="text" value={value} onChange={onChange} /> 
 
           {/*<Button onClick={() => onSearch(value)} style= {{ backgroundColor: 'red', color: 'white'}}>Search</Button>*/}
           <Button onClick={() => {setOpen(true); setModalData(value);}} style= {{ backgroundColor: 'red', color: 'white' }}>Search</Button>
@@ -98,19 +100,26 @@ export default function Search() {
                       </Typography>
                     </Box>
                     </Modal>
-
+      
         </div>
         <div className="dropdown">
           {movies
           .filter((item) => {
               const searchTerm = value.toLowerCase();
               const mname = item.name.toLowerCase();
+              const err = eMessage;
 
+              if(mname !== searchTerm){
               return (
                 searchTerm &&
                 mname.startsWith(searchTerm) &&
                 mname !== searchTerm
               );
+              } else {
+                return (
+                    err
+                );
+              }
             })
             .slice(0, 10)
             .map((item) => (
@@ -120,10 +129,10 @@ export default function Search() {
                 key={item.name}
               >
                 {item.name}
-              </div>
+              </div> 
             ))}
-        </div>
-      </div>
+        </div> 
+      </div> 
     </div>
   );
 }
